@@ -8,5 +8,5 @@ number = int(input ())
 sumnumber = 0
 while number>0:
     sumnumber = sumnumber+number%10
-    number = int(number/10)
+    number = number//10
 print (sumnumber)
