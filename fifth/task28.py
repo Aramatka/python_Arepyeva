@@ -5,3 +5,15 @@
 
 2 2
     4 '''
+
+
+def sum(a, b):
+    if b == 0:  # Выход из рекурсии
+        return a
+    return sum(a+1, b-1)
+    
+a = int(input('Введите чисдло A: '))
+b = int(input('Введите чисдло B: '))
+sum (a, b)
+
+print(sum(a, b))

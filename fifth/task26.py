@@ -8,13 +8,13 @@ A = 3; B = 5 -> 243 (3⁵)
 
 
 def degree(a, b):
-    deg = 1
     if b == 0:  # Выход из рекурсии
         return 1
     return a*degree(a, b-1)
     
 a = int(input('Введите чисдло A: '))
 b = int(input('Введите чисдло B: '))
+
 degree (a, b)
 
 print(degree(a, b))
