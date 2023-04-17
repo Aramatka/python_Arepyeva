@@ -11,20 +11,21 @@
 **Ввод:** пара-ра-рам рам-пам-папам па-ра-па-да    
     **Вывод:** Парам пам-пам  '''
 
-def rhythm(str):
+def vinni(str):
     str = str.split()
     list_1 = []
     for word in str:
-        sum_w = 0
+        sum = 0
         for i in word:
             if i in 'аеёиоуыэюя':
-                sum_w += 1
-        list_1.append(sum_w)
+                sum = sum + 1
+        list_1.append(sum)
     return len(list_1) == list_1.count(list_1[0])
 
+#str = 'пара-ра-рам рам-пам-папам па-ра-па-дам'
 
-str_1 = 'пара-ра-рам рам-пам-папам па-ра-па-дам'
-if rhythm(str_1):
+str = input('Введите песенку: ')
+if vinni(str):
     print('Парам пам-пам')
 else:
     print('Пам парам')
