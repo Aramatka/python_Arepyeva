@@ -21,10 +21,9 @@ def input_data():
         print('Вариант выбран не правильно. Попробуйте ещё раз')
         var = int(input("Введите номер варианта: "))
 
-    if var == 1:
+    if var == 1 or 2:
         with open('data_first_variant.csv', 'a', encoding='utf-8') as file:
             file.write(f'{name}\n{surname}\n{phone}\n{address}\n\n')
-    else:
         with open('data_second_variant.csv', 'a', encoding='utf-8') as file:
             file.write(f'{name};{surname};{phone};{address}\n\n')
 
@@ -59,8 +58,8 @@ def put_data():
         print('Вариант выбран не правильно. Попробуйте ещё раз')
         number_file = int(input('Введите номер файла: '))
 
-    if number_file == 1:  # Можно сделать нумерацию внутри файла
-        print("Какую именно запись по счету Вы хотите изменить?")
+    if number_file == 1 or 2:
+        print("Какую именно запись по счету Вы хотите изменить? Номерация начинается с 0!")
         number_journal = int(input('Введите номер записи: '))
 
        
@@ -73,16 +72,16 @@ def put_data():
                      data_first[number_journal + 1:]
         with open('data_first_variant.csv', 'w', encoding='utf-8') as file:
             file.write(''.join(data_first))
-        print('Изменения успешно сохранены!')
-    else:
-        print("Какую именно запись по счету Вы хотите изменить?")
-        number_journal = int(input('Введите номер записи: '))
+        #print('Изменения успешно сохранены!')
+    
+        #print("Какую именно запись по счету Вы хотите изменить?")
+        #number_journal = int(input('Введите номер записи: '))
 
-        print(f'Изменить данную запись\n{data_second[number_journal]}')
-        name = name_data()
-        surname = surname_data()
-        phone = phone_data()
-        address = address_data()
+        #print(f'Изменить данную запись\n{data_second[number_journal]}')
+        #name = name_data()
+        #surname = surname_data()
+        #phone = phone_data()
+        #address = address_data()
         data_second = data_second[:number_journal] + [f'{name};{surname};{phone};{address}\n'] + \
                       data_second[number_journal + 1:]
         with open('data_second_variant.csv', 'w', encoding='utf-8') as file:
@@ -99,7 +98,7 @@ def delete_data():
         print('Вариант выбран не правильно. Попробуйте ещё раз')
         number_file = int(input('Введите номер файла: '))
 
-    if number_file == 1: 
+    if number_file == 1 or 2: 
         print("Какую именно запись по счету Вы хотите удалить?")
         number_journal = int(input('Введите номер записи: '))
         
@@ -107,10 +106,10 @@ def delete_data():
         data_first = data_first[:number_journal] + data_first[number_journal + 1:]
         with open('data_first_variant.csv', 'w', encoding='utf-8') as file:
             file.write(''.join(data_first))
-        print('Изменения успешно сохранены!')
-    else:
-        print("Какую именно запись по счету Вы хотите удалить?")
-        number_journal = int(input('Введите номер записи: '))
+        #print('Изменения успешно сохранены!')
+    
+        #print("Какую именно запись по счету Вы хотите удалить?")
+        #number_journal = int(input('Введите номер записи: '))
 
         print(f'Удалить данную запись\n{data_second[number_journal - 1]}')
         data_second = data_second[:number_journal] + data_second[number_journal + 1:]
